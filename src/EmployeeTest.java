@@ -9,7 +9,7 @@ public class EmployeeTest {
         FileUtils fileUtils = new FileUtils();
         EmployeeUtils employeeUtils = new EmployeeUtils();
         try {
-            Employee[] employees = FileUtils.read("employeeList.csv");
+            Employee[] employees = FileUtils.read2("employeeList.csv");
             FileWriter fileWriter= new FileWriter("employeeStatistics.csv");
             BufferedWriter bfw= new BufferedWriter(fileWriter);
 
