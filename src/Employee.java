@@ -64,6 +64,10 @@ public class Employee {
                 '}';
     }
 
+    public String toCsv() {
+        return firstName + ";" + lastName + ";" + pesel+ " ;" + department+ " ;" +salary ;
+    }
+
 }
 
 

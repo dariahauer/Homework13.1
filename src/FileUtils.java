@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileUtils {
@@ -18,16 +17,6 @@ public class FileUtils {
         return result;
     }
 
-
-    static double averageSalary(Employee[] employees) {
-        int employeeCounter = 0;
-        double salarySum = 0;
-        for (Employee employee : employees) {
-            employeeCounter++;
-            salarySum += employee.getSalary();
-        }
-        return salarySum / employeeCounter;
-    }
 
     private static int countLines(String filename) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(filename));
