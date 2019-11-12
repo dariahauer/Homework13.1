@@ -11,6 +11,8 @@ public class EmployeeTest {
             System.out.println("Lower salary: " + employeeUtils.minSalary(employees));
             System.out.println("Higher salary: " + employeeUtils.maxSalary(employees));
             System.out.println("Employee number in depatment it: " + employeeUtils.employeeNumber(employees, "it"));
+            System.out.println("Employee number in depatment it: " + employeeUtils.employeeNumber(employees, "Support"));
+            System.out.println("Employee number in depatment it: " + employeeUtils.employeeNumber(employees, "Management"));
 
 
             for (Employee empl : employees) {

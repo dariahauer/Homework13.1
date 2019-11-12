@@ -1,53 +1,37 @@
 public class EmployeeUtils {
 
 
-    public double averageSalary(Employee[] employees) {
-        int employeeCounter = 0;
+    public static double averageSalary(Employee[] employees) {
         double salarySum = 0;
         for (Employee employee : employees) {
-            employeeCounter++;
             salarySum += employee.getSalary();
         }
-        return salarySum / employeeCounter;
+        return salarySum / employees.length;
     }
 
 
-    double minSalary(Employee[] employees) {
-        double salary = employees[0].getSalary();
-        double[] salaryTable = new double[employees.length];
+    public static double minSalary(Employee[] employees) {
+        double minSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            salaryTable[i] = employees[i].getSalary();
-            if (isMin(salaryTable, salary)) {
-                salary = salaryTable[i];
+            if (minSalary > employees[i].getSalary()) {
+                minSalary = employees[i].getSalary();
             }
         }
-        return salary;
+        return minSalary;
     }
 
-    double maxSalary(Employee[] employees) {
-        double salary = employees[0].getSalary();
-        double[] salaryTable = new double[employees.length];
+    public static double maxSalary(Employee[] employees) {
+        double maxSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            salaryTable[i] = employees[i].getSalary();
-            if (!isMin(salaryTable, salary)) {
-                salary = salaryTable[i];
+            if (maxSalary < employees[i].getSalary()) {
+                maxSalary = employees[i].getSalary();
             }
         }
-        return salary;
+        return maxSalary;
     }
 
-    private boolean isMin(double[] salaryTable, double salary) {
-        salary = salaryTable[0];
-        for (double salaryTab : salaryTable) {
-            if (salary < salaryTab) {
-                return false;
-            }
-        }
-        return true;
 
-    }
-
-    long employeeNumber(Employee[] employees, String department) {
+    public static long employeeNumber(Employee[] employees, String department) {
         int count = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getDepartment().equals(department)) {
